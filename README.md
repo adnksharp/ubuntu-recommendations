@@ -20,11 +20,12 @@
 sudo apt install curl clang software-properties-common wget power-profiles-daemon
 ```
 
-* `curl`: Conexión a internet para transferir datos.
-* `clang`: Compilador de C/C++/ObjetiveC...
-* `software-properties-common`: Scripts para agregar fuentes de software extra.
-* `wget`: Parecido a curl.
-* `power-profiles-daemon`: Perfiles de energia.
+> [!NOTE]
+> * `curl`: Conexión a internet para transferir datos.
+> * `clang`: Compilador de C/C++/ObjetiveC...
+> * `software-properties-common`: Scripts para agregar fuentes de software extra.
+> * `wget`: Parecido a curl.
+> * `power-profiles-daemon`: Perfiles de energia.
 
 ### Agregar claves de los nuevos repositorios
 #### ROS2 gpg key
@@ -378,18 +379,5 @@ sudo apt install ranger
 
 ### Librerias de python
 ```shell
-pip install colorama \
-  progress \
-  matplotlib \
-  opencv-python \
-  numpy \
-  python-dotenv \
-  pandas \
-  PySide6 \
-  toml \
-  vtk \ 
-  pyserial \
-  pyperclip \
-  pygame \
-  notify_py 
+pip install colorama progress matplotlib opencv-python numpy python-dotenv pandas PySide6 toml vtk pyserial pyperclip pygame notify_py 
 ```
