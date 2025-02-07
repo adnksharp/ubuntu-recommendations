@@ -1,4 +1,4 @@
-# Recomendaciones despues de instalar Ubuntu
+# Recomendaciones después de instalar Ubuntu
 
 * [Instalación completa](#instalación-completa)
 * [Instalación individual](#instalación-individual)
@@ -14,7 +14,7 @@
 * [Configuración](#configuración)
 
 ## Instalación completa
-### Intalación de paquetes necesarios
+### Instalación de paquetes necesarios
 
 ```shell
 sudo apt install curl clang software-properties-common wget power-profiles-daemon
@@ -74,7 +74,7 @@ sudo add-apt-repository ppa:fastfetch/stable
 sudo apt update ; sudo apt upgrade
 ```
 
-### [OPCIONAL] Cambio de interprete de comandos sell
+### [OPCIONAL] Cambio de intérprete de comandos sell
 [Wiki de ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/wiki#getting-started)
 
 #### Instalación de zsh y ohmyzsh
@@ -157,7 +157,7 @@ colcon build --symlink-install
 > [!WARNING]
 > Esta operación tarda bastante.
 
-#### Iniciar las herramientas de ROS2 junto con el interprete de comandos
+#### Iniciar las herramientas de ROS2 junto con el intérprete de comandos
 ```shell
 echo "source $HOME/ros2_jazzy/install/local_setup.bash" >> ~/.bashrc
 echo "source $HOME/ros2_jazzy/install/local_setup.zsh" >> ~/.zshrc
@@ -183,7 +183,7 @@ sudo apt install ranger
 ```
 
 ## Instalación individual
-### Paquetes recomenados
+### Paquetes recomendados
 
 ```shell
 sudo apt install curl clang software-properties-common wget power-profiles-daemon
@@ -217,7 +217,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 ### VS Code
 
-#### Agragar clave gpg de VS code
+#### Agragar clave gpg de VS Code
 ```shell
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 ```
@@ -332,7 +332,7 @@ colcon build --symlink-install
 > [!WARNING]
 > Esta operación tarda bastante.
 
-#### Agregar las herramientas de ROS2 a la configuración del interprete de comandos
+#### Agregar las herramientas de ROS2 a la configuración del intérprete de comandos
 ```shell
 echo "source $HOME/ros2_jazzy/install/local_setup.bash" >> ~/.bashrc
 echo "source $HOME/ros2_jazzy/install/local_setup.zsh" >> ~/.zshrc
@@ -377,7 +377,7 @@ sudo apt install ranger
 2. Instalar `esp32 by Espressif` desde el gestor de tarjetas de Arduino
 ![](https://i.imgur.com/3CAvWoM.png)
 
-### Librerias de python
+### Librerías de Python
 ```shell
 pip install colorama progress matplotlib opencv-python numpy python-dotenv pandas PySide6 toml vtk pyserial pyperclip pygame notify_py 
 ```
