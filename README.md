@@ -2,10 +2,11 @@
 
 * [Instalación completa](#instalación-completa)
 * [Instalación individual](#instalación-individual)
-  * [Paquetes necesarios](#paquetes-recomenados)
+  * [Paquetes necesarios](#paquetes-recomendados)
   * [Visual Studio Code](#vs-code)
   * [ZSH](#interprete-de-comandos-zsh)
   * [Arduino 2](#arduino-ide-2)
+  * [LaTex](#latex)
   * [ROS2](#ros2)
   * [Software Opcional](#software-opcional)
     * [Mission Center](#visor-de-uso-de-hardware-parecido-a-windows)
@@ -83,8 +84,9 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-* `zsh`: Shell mejorada de la shell instalada por defecto bash.
-* `ohmyzsh`: Framework para bustear zsh.
+> [!NOTE]
+> * `zsh`: Shell mejorada de la shell instalada por defecto bash.
+> * `ohmyzsh`: Framework para bustear zsh.
 
 #### Cambio de shell
 ```shell
@@ -97,8 +99,9 @@ sudo apt install flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
-* `flatpak`: Software base.
-* `gnome-software-plugin-flatpak`: Interfaz gráfica de la tienda de flatpak.
+> [!NOTE]
+> * `flatpak`: Software base.
+> * `gnome-software-plugin-flatpak`: Interfaz gráfica de la tienda de flatpak.
 
 ### Instalación de VS Code
 ```shell
@@ -114,6 +117,15 @@ flatpak install flathub cc.arduino.IDE2
 ```shell
 sudo usermod -a -G dialout $USER
 ```
+
+### Instalación de LaTeX
+```shell
+sudo apt install latexmk texlive
+```
+
+> [!NOTE]
+> * `texlive`: Paquete base de latex
+> * `latexmk`: Auto-compilador de latex
 
 ### Instalación de ROS2
 #### Instalación de paquetes base
@@ -256,11 +268,6 @@ chsh -s /usr/bin/zsh
 ```
 
 
-
-
-
-
-
 ### Arduino IDE 2
 ```shell
 flatpak install flathub cc.arduino.IDE2
@@ -271,6 +278,10 @@ flatpak install flathub cc.arduino.IDE2
 sudo usermod -a -G dialout $USER
 ```
 
+### LaTeX
+```shell
+sudo apt install latexmk texlive
+```
 
 ### ROS2
 #### Agregar clave gpg de ROS2
