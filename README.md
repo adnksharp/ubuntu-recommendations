@@ -2,14 +2,14 @@
 
 * [Instalación completa](#instalación-completa)
 * [Instalación individual](#instalación-individual)
-  * [Paquetes necesarios](#paquetes-recomendados)
-  * [Visual Studio Code](#vs-code)
+  * [Paquetes necesarios](#paquetes-necesarios)
+  * [Visual Studio Code](#vs-code-1)
   * [ZSH](#interprete-de-comandos-zsh)
   * [Arduino 2](#arduino-ide-2)
   * [LaTex](#latex)
-  * [ROS2](#ros2)
-  * [Software Opcional](#software-opcional)
-    * [Mission Center](#visor-de-uso-de-hardware-parecido-a-windows)
+  * [ROS2](#ros2-1)
+  * [Software Opcional](#software-opcional-1)
+    * [Mission Center](#visor-de-uso-de-hardware-parecido-a-windows-1)
     * [Fastfetch](#fastfetch)
     * [Ranger](#gestor-de-archivos-desde-la-terminal-ranger)
 * [Configuración](#configuración)
@@ -195,7 +195,7 @@ sudo apt install ranger
 ```
 
 ## Instalación individual
-### Paquetes recomendados
+### Paquetes necesarios
 
 ```shell
 sudo apt install curl clang software-properties-common wget power-profiles-daemon
