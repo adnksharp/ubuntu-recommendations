@@ -13,6 +13,10 @@
     * [Fastfetch](#fastfetch)
     * [Ranger](#gestor-de-archivos-desde-la-terminal-ranger)
 * [Configuración](#configuración)
+  * [VS Code](extensiones-para-vs-code)
+  * [Arduino](configuraciones-de-arduino)
+  * [Python](librerías-de-python)
+  * [Micro ROS](uros)
 
 ## Instalación completa
 ### Instalación de paquetes necesarios
@@ -392,3 +396,5 @@ sudo apt install ranger
 ```shell
 pip install colorama progress matplotlib opencv-python numpy python-dotenv pandas PySide6 toml vtk pyserial pyperclip pygame notify_py 
 ```
+
+### uRos
