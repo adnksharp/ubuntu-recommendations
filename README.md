@@ -13,10 +13,10 @@
     * [Fastfetch](#fastfetch)
     * [Ranger](#gestor-de-archivos-desde-la-terminal-ranger)
 * [Configuración](#configuración)
-  * [VS Code](extensiones-para-vs-code)
-  * [Arduino](configuraciones-de-arduino)
-  * [Python](librerías-de-python)
-  * [Micro ROS](uros)
+  * [VS Code](#extensiones-para-vs-code)
+  * [Arduino](#configuraciones-de-arduino)
+  * [Python](#librerías-de-python)
+  * [Micro ROS](#uros)
 
 ## Instalación completa
 ### Instalación de paquetes necesarios
@@ -150,37 +150,105 @@ sudo apt install -y \
   ros-dev-tools
 ```
 
+#### Descarga de las herramientas de ROS2
+```shell
+sudo apt update && sudo apt install ros-dev-tools
+```
+
 #### Descarga de ROS2
+
+<details><summary>Ubuntu 24</summary>
+
 ```shell
-mkdir -p ~/ros2_jazzy/src
-cd ~/ros2_jazzy
-vcs import --input https://raw.githubusercontent.com/ros2/ros2/jazzy/ros2.repos src
-
-sudo apt upgrade
+sudo apt install ros-jazzy-desktop
 ```
+</details>
+<details><summary>Ubuntu 22</summary>
 
-#### Instalación de dependencias de ROS2
 ```shell
-sudo rosdep init
-rosdep update
-rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers"
+sudo apt install ros-humble-desktop
 ```
+</details>
+<details><summary>Ubuntu 20</summary>
 
-#### Build ROS2
-```
-colcon build --symlink-install
-```
-> [!WARNING]
-> Esta operación tarda bastante.
-
-#### Iniciar las herramientas de ROS2 junto con el intérprete de comandos
 ```shell
-echo "source $HOME/ros2_jazzy/install/local_setup.bash" >> ~/.bashrc
-echo "source $HOME/ros2_jazzy/install/local_setup.zsh" >> ~/.zshrc
+sudo apt install ros-foxy-desktop python3-argcomplete
+```
+</details>
+
+#### Agregar las herramientas de ROS2 a la configuración del intérprete de comandos
+
+Editar el archivo 
+
+```shell
+nano ~/.bashrc
 ```
 
-> [!WARNING]
-> Esto hará más tardado el inicio del interprete de comandos
+
+
+```shell
+nano ~/.zshrc
+```
+
+<details><summary>ROS2 Rolling</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=49
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=rolling
+     source /opt/ros/rolling/setup.zsh
+}
+```
+</details>
+
+<details><summary>ROS2 Jazzy</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=jazzy
+     source /opt/ros/jazzy/setup.zsh
+}
+```
+</details>
+
+<details><summary>ROS2 Humble</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=humble
+     source /opt/ros/humble/setup.zsh
+}
+```
+
+</details>
+
+<details><summary>ROS2 Foxy</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=foxy
+     source /opt/ros/foxy/setup.zsh
+}
+```
+</details>
+
+> [!NOTE]
+> Con esto, al ejecutar `run-ros` se cargarán las herramientas de ros junto con las definiciones `ROS_DOMAIN_ID`, `ROS_VERSION`, etc.
 
 ### Software opcional
 #### Visor de uso de hardware parecido a Windows
@@ -304,8 +372,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 sudo apt update ; sudo apt upgrade
 ```
 
-
-
 #### Instalación de paquetes necesarios por ROS2
 ```shell
 sudo apt install -y \
@@ -321,40 +387,105 @@ sudo apt install -y \
   python3-pytest-rerunfailures \
   python3-pytest-runner \
   python3-pytest-timeout \
+  python3-colcon-common-extensions \
   ros-dev-tools
 ```
 
 #### Descarga de ROS
+
+<details><summary>Ubuntu 24</summary>
+
 ```shell
-mkdir -p ~/ros2_jazzy/src
-cd ~/ros2_jazzy
-vcs import --input https://raw.githubusercontent.com/ros2/ros2/jazzy/ros2.repos src
-
-sudo apt upgrade
+sudo apt install ros-jazzy-desktop
 ```
+</details>
+<details><summary>Ubuntu 22</summary>
 
-#### Instalación de dependencias de ROS
 ```shell
-sudo rosdep init
-rosdep update
-rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers"
+sudo apt install ros-humble-desktop
 ```
+</details>
+<details><summary>Ubuntu 20</summary>
 
-#### Build ROS
+```shell
+sudo apt install ros-foxy-desktop python3-argcomplete
 ```
-colcon build --symlink-install
-```
-> [!WARNING]
-> Esta operación tarda bastante.
+</details>
+
 
 #### Agregar las herramientas de ROS2 a la configuración del intérprete de comandos
+
+Editar el archivo 
+
 ```shell
-echo "source $HOME/ros2_jazzy/install/local_setup.bash" >> ~/.bashrc
-echo "source $HOME/ros2_jazzy/install/local_setup.zsh" >> ~/.zshrc
+nano ~/.bashrc
 ```
 
-> [!WARNING]
-> Esto hará más tardado el inicio del interprete de comandos
+
+
+```shell
+nano ~/.zshrc
+```
+
+<details><summary>ROS2 Rolling</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=49
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=rolling
+     source /opt/ros/rolling/setup.zsh
+}
+```
+</details>
+
+<details><summary>ROS2 Jazzy</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=jazzy
+     source /opt/ros/jazzy/setup.zsh
+}
+```
+</details>
+
+<details><summary>ROS2 Humble</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=humble
+     source /opt/ros/humble/setup.zsh
+}
+```
+
+</details>
+
+<details><summary>ROS2 Foxy</summary>
+
+```shell
+run-ros() 
+{
+     export ROS_DOMAIN_ID=41
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=foxy
+     source /opt/ros/foxy/setup.zsh
+}
+```
+</details>
+
+> [!NOTE]
+> Con esto, al ejecutar `run-ros` se cargarán las herramientas de ros junto con las definiciones `ROS_DOMAIN_ID`, `ROS_VERSION`, etc.
 
 ### Software opcional
 #### Visor de uso de hardware parecido a Windows
@@ -397,4 +528,229 @@ sudo apt install ranger
 pip install colorama progress matplotlib opencv-python numpy python-dotenv pandas PySide6 toml vtk pyserial pyperclip pygame notify_py 
 ```
 
-### uRos
+### uROS
+Tutorial completo de $$\mu$$ ROS en [micro.ros.org](https://micro.ros.org/docs/tutorials/core/first_application_linux/).
+
+#### 1. Crear un espacio de trabajo de $$\mu$$ ROS
+
+```shell
+mkdir ~/uros_ws/
+cd ~/uros_ws
+```
+
+#### 2. Clonar los repositorios de $$\mu$$ ROS
+
+<details><summary>ROS2 Rolling</summary>
+  <details><summary>shell bash</summary>
+ 
+  ```shell
+  source /opt/ros/rolling/setup.bash
+  ```
+  </details><details><summary>shell ZSH</summary>
+       
+  ```shell
+  source /opt/ros/rolling/setup.zsh
+  ```
+  </details>
+  
+  ```shell
+  git clone -b rolling https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+  ```
+</details>
+
+<details><summary>ROS2 Jazzy</summary>
+  <details><summary>shell bash</summary>
+ 
+  ```shell
+  source /opt/ros/jazzy/setup.bash
+  ```
+  </details><details><summary>shell ZSH</summary>
+       
+  ```shell
+  source /opt/ros/jazzy/setup.zsh
+  ```
+  </details>
+  
+  ```shell
+  git clone -b jazzy https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+  ```
+</details>
+
+<details><summary>ROS2 Humble</summary>
+  <details><summary>shell bash</summary>
+ 
+  ```shell
+  source /opt/ros/humble/setup.bash
+  ```
+  </details><details><summary>shell ZSH</summary>
+       
+  ```shell
+  source /opt/ros/humble/setup.zsh
+  ```
+  </details>
+  
+  ```shell
+  git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+  ```
+</details>
+
+<details><summary>ROS2 Foxy</summary>
+  <details><summary>shell bash</summary>
+ 
+  ```shell
+  source /opt/ros/foxy/setup.bash
+  ```
+  </details><details><summary>shell ZSH</summary>
+       
+  ```shell
+  source /opt/ros/foxy/setup.zsh
+  ```
+  </details>
+  
+  ```shell
+  git clone -b foxy https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+  ```
+</details>
+
+#### 3. Actualizar las dependencias
+
+```shell
+sudo apt update
+rosdep update
+rosdep install --from-path src --ignore-src -y
+```
+
+#### 4. Compilar $$\mu$$ ROS
+
+```shell
+colcon build
+```
+
+#### 5. Iniciar las herramientas de $$\mu$$ ROS
+
+<details><summary>bash</summary>
+
+```shell
+source install/local_setup.bash
+```
+</details><details><summary>ZSH</summary>
+
+```shell
+source install/local_setup.zsh
+```
+</details>
+
+#### 6. Construir el firmware
+
+```shell
+ros2 run micro_ros_setup build_firmware.sh
+```
+
+<details><summary>bash</summary>
+
+```shell
+source install/local_setup.bash
+```
+</details>
+<details><summary>ZSH</summary>
+
+```shell
+source install/local_setup.zsh
+```
+</details>
+
+#### 7. Crear el agente de $$\mu$$ ROS
+
+```shell
+ros2 run micro_ros_setup create_agent_ws.sh
+ros2 run micro_ros_setup build_agent.sh
+```
+
+<details><summary>bash</summary>
+
+```shell
+source install/local_setup.bash
+```
+</details><details><summary>ZSH</summary>
+
+```shell
+source install/local_setup.zsh
+```
+</details>
+
+#### 8. Descaargar las librerías de $$\mu$$ ROS
+
+<details><summary>ROS2 Rolling</summary>
+
+```shell
+git clone -b rolling https://github.com/micro-ROS/micro_ros_arduino.git ~/Arduino/libraries/micro_ros_arduino
+```
+</details>
+
+<details><summary>ROS2 Jazzy</summary>
+
+```shell
+git clone -b jazzy https://github.com/micro-ROS/micro_ros_arduino.git ~/Arduino/libraries/micro_ros_arduino
+```
+</details>
+
+<details><summary>ROS2 Humble</summary>
+
+```shell
+git clone -b humble https://github.com/micro-ROS/micro_ros_arduino.git ~/Arduino/libraries/micro_ros_arduino
+```
+
+</details>
+
+<details><summary>ROS2 Foxy</summary>
+
+```shell
+git clone -b foxy  https://github.com/micro-ROS/micro_ros_arduino.git ~/Arduino/libraries/micro_ros_arduino
+```
+</details>
+
+#### 9. Cargar un ejemplo de Arduino
+
+1. Abre el ejemplo `micro_ros_arduino_examples/publisher` en Arduino IDE 2.
+2. Carga el ejemplo en la placa ESP32.
+
+![](https://i.imgur.com/x3n5BMu.png)
+
+#### 10. Ejecutar el agente de $$\mu$$ ROS
+
+```shell
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
+```
+
+<details><summary>Dónde `/dev/ttyUSB0` es el puerto donde se conecta el ESP32.</summary>
+
+```shell
+ls /dev/tty* | grep -E 'USB|ACM|AMA'
+```
+</details>
+
+La terminal debería mostrar algo como esto:
+
+![](img/out1.svg)
+
+#### 11. Verficar el tópico
+
+```shell
+ros2 node list
+```
+
+debería mostrar el nodo `micro_ros_arduino_node` (linea **55** del ejemplo).
+
+```shell
+ros2 topic list
+```
+
+debería mostrar el tópico `/micro_ros_arduino_node_publisher` (linea **62** del ejemplo).
+
+#### 12. Escuchar el tópico
+```shell
+ros2 topic echo /micro_ros_arduino_node_publisher
+```
+
+mostrará los mensajes que envía el ESP32.
+
